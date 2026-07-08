@@ -2,14 +2,24 @@
 
 ## Week 1
 
-First C program.
+### Features
 
-### Concepts
+- Welcome screen
+- Menu system
+- Greeting option
+- Four-function calculator (+, -, *, /)
+- Division by zero protection
 
-- `#include`
-- `main()`
+### Concepts Learned
+
+- Variables
+- `int`
+- `char`
+- `float`
 - `printf()`
-- `return`
+- `scanf()`
+- `if / else if`
+- Type casting
 
 ### Build
 
