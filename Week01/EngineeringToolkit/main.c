@@ -23,33 +23,30 @@ void calculator(void)
 
     printf("\nEnter your calculation : ");
     scanf("%d %c %d", &num1, &op, &num2);
-        
-    if (op == '+')
+
+    switch (op)
     {
-        printf("\nResult: %d\n", num1 + num2);
-    }
-    else if (op == '-')
-    {
-        printf("\nResult: %d\n", num1 - num2);
-    }
-    else if (op == '*')
-    {
-        printf("\nResult: %d\n", num1 * num2);
-    }
-    else if (op == '/')
-    {
-        if (num2 != 0)
-        {
-            printf("\nResult: %.2f\n", (float)num1 / num2);
-        }
-        else
-        {
-            printf("\nError: Division by zero is not allowed.\n");
-        }
-    }
-    else
-    {
-        printf("\nInvalid operator. Please use +, -, *, or /.\n");
+        case '+':
+            printf("\nResult: %d\n", num1 + num2);
+            break;
+        case '-':
+            printf("\nResult: %d\n", num1 - num2);
+            break;
+        case '*':
+            printf("\nResult: %d\n", num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0)
+            {
+                printf("\nResult: %.2f\n", (float)num1 / num2);
+            }
+            else
+            {
+                printf("\nError: Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("\nInvalid operator. Please use +, -, *, or /.\n");
     }
         
 }
@@ -65,21 +62,22 @@ int main(void)
         printf("Choose an option: ");
         scanf("%d", &choice);
 
-        if (choice == 1)
+        switch (choice)
         {
-            sayHello();  
-        }
-        else if (choice == 2)
-        {
-            calculator();
-        }
-        else if (choice == 3)
-        {
-            printf("\nGoodbye!\n");
-        }
-        else
-        {
-            printf("\nInvalid option.\n");
+            case 1:
+                sayHello();
+                break;  
+
+            case 2:
+                calculator();
+                break;
+
+            case 3:
+                printf("\nGoodbye!\n");
+                break;
+
+            default:
+                printf("\nInvalid option.\n");
         }
 
     } while (choice != 3);
