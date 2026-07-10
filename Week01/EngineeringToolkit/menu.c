@@ -9,7 +9,8 @@ void printMenu(void)
 
     printf("1. Say Hello\n");
     printf("2. Calculator\n");
-    printf("3. Exit\n\n");
+    printf("3. Temperature Converter\n");
+    printf("4. Exit\n\n");
 }
 
 void sayHello(void)

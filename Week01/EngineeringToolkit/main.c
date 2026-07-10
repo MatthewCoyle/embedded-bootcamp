@@ -1,10 +1,19 @@
 #include <stdio.h>
 #include "calculator.h"
 #include "menu.h"
+#include "temperature.h"
+
+typedef enum
+{
+    MENU_SAY_HELLO = 1,
+    MENU_CALCULATOR,
+    MENU_TEMPERATURE_CONVERTER,
+    MENU_EXIT
+} MenuOption;
 
 int main(void)
 {
-    int choice;
+    MenuOption choice;
 
     do
     {
@@ -15,15 +24,19 @@ int main(void)
 
         switch (choice)
         {
-            case 1:
+            case MENU_SAY_HELLO:
                 sayHello();
                 break;  
 
-            case 2:
+            case MENU_CALCULATOR:
                 calculator();
                 break;
+            
+            case MENU_TEMPERATURE_CONVERTER:
+                temperatureConverter();
+                break;
 
-            case 3:
+            case MENU_EXIT:
                 printf("\nGoodbye!\n");
                 break;
 
@@ -31,7 +44,7 @@ int main(void)
                 printf("\nInvalid option.\n");
         }
 
-    } while (choice != 3);
+    } while (choice != MENU_EXIT);
 
     return 0;
 }
