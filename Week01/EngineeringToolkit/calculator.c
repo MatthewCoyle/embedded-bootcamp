@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include "calculator.h"
 
-int add(int a, int b)
+float add(float a, float b)
 {
     return a + b;
 }
 
-int subtract(int a, int b)
+float subtract(float a, float b)
 {
     return a - b;
 }
 
-int multiply(int a, int b)
+float multiply(float a, float b)
 {
     return a * b;
 }
@@ -23,35 +23,40 @@ float divide(float a, float b)
 
 void calculator(void)
 {
-    int num1, num2;
+    float num1, num2;
     char op;
+    float result;
+    int validresult = 1; // Flag to check if the result is valid
 
     printf("\nEnter your calculation : ");
-    scanf("%d %c %d", &num1, &op, &num2);
+    scanf("%f %c %f", &num1, &op, &num2);
 
     switch (op)
     {
         case '+':
-            printf("\nResult: %d\n", add(num1, num2));
+            result = add(num1, num2);
             break;
         case '-':
-            printf("\nResult: %d\n", subtract(num1, num2));
+            result = subtract(num1, num2);
             break;
         case '*':
-            printf("\nResult: %d\n", multiply(num1, num2));
+            result = multiply(num1, num2);
             break;
         case '/':
-            if (num2 != 0)
+            if (num2 == 0)
             {
-                printf("\nResult: %.2f\n", divide((float)num1, (float)num2));
+                printf("\nError: Division by zero is not allowed.\n");
+                return; // Exit the function early if division by zero
             }
             else
             {
-                printf("\nError: Division by zero is not allowed.\n");
+                result = divide(num1, num2);
             }
             break;
         default:
             printf("\nInvalid operator. Please use +, -, *, or /.\n");
+            return;
     }
-        
+
+    printf("\nResult: %.2f\n", result);
 }

@@ -17,15 +17,11 @@ void temperatureConverter(void)
     switch (choice)
     {
         case 1:
-            printf("\n%.2f Celsius is %.2f Fahrenheit.\n",
-                   temp,
-                   temp * 9.0f / 5.0f + 32.0f);
+            printf("\n%.2f Celsius is %.2f Fahrenheit.\n", temp, temp * 9.0f / 5.0f + 32.0f);
             break;
 
         case 2:
-            printf("\n%.2f Fahrenheit is %.2f Celsius.\n",
-                   temp,
-                   (temp - 32.0f) * 5.0f / 9.0f);
+            printf("\n%.2f Fahrenheit is %.2f Celsius.\n", temp, (temp - 32.0f) * 5.0f / 9.0f);
             break;
 
         default:
