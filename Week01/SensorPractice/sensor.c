@@ -17,7 +17,7 @@ void updateTemperature(SensorData *reading, float newTemperature)
 
 void findTemperatureRange(SensorData *readings, int size, float *minTemp, float *maxTemp)
 {
-    *minTemp = readings[0].temperature;
+    *minTemp = readings[0].temperature; 
     *maxTemp = readings[0].temperature;
 
     for (int i = 1; i < size; i++)

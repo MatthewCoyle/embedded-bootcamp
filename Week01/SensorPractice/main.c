@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "sensor.h"
+#define READING_COUNT 3
 
 int main(void)
 {
-    SensorData readings[3];
+    SensorData readings[READING_COUNT];
     readings[0].voltage = 5.0f;
     readings[0].current = 2.0f;
     readings[0].temperature = 25.0f;
@@ -18,10 +19,10 @@ int main(void)
 
     updateTemperature(&readings[1], 28.5f);
 
-    printReadings(readings, 3);
+    printReadings(readings, READING_COUNT);
 
     float minTemp, maxTemp;
-    findTemperatureRange(readings, 3, &minTemp, &maxTemp);
+    findTemperatureRange(readings, READING_COUNT, &minTemp, &maxTemp);
     printf("Temperature range: %.2fC to %.2fC\n", minTemp, maxTemp);
 
     return 0;
